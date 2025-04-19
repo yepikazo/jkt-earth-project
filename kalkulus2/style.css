@@ -1,0 +1,23 @@
+.container {
+    background-color: #f43c3c;
+    display : flex;
+    align-items: center;;
+}
+
+.ul-cont {
+    display: flex;
+    
+}
+.li-cont {
+    list-style-type: none;
+    width : 200px;
+}
+
+.content {
+    border: black;
+    background-color: #1ceb68;
+}
+
+li {
+    font-family: monospace;
+}
