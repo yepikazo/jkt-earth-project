@@ -1,0 +1,177 @@
+*, html {
+    margin : 0;
+    padding : 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+nav{
+    background-color: #000957;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    /* position: fixed; */
+    width: 99%;
+    
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul li{
+    list-style-type: none;
+    width: 100%;
+    font-style: bold;
+    color: #ffffff;
+    padding : 0.5rem;
+    transition: all;
+    transition-duration: 0.5s;
+
+}
+
+nav ul li:hover{
+    background-color: #344CB7;
+    border-radius: 5px;
+    color :#d5d5d5
+}
+img {
+    width: 50px;
+    height: 50px;
+    padding : 0.5rem;
+}
+
+.icon-list {
+    display: none;
+    color: #ffffff;
+    font-size: 2rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+/* main content */
+body{
+    /* background-image: url(assets/polygon.jpg); */
+    background-color: #B0B7C4;
+}
+.content{
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.tabel{
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #646464;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.input{
+    background-color: #ffffff;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius :5px
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+    
+}
+form p {
+    font-family: monospace;
+}
+
+input[type="number"], [type="button"]{
+    border : none;
+    border-radius: 5px;
+    width: 500px;
+    height: 25px;
+}
+
+input[type="button"]{
+    width: 200px;
+}
+input[type="button"]:hover{
+    background-color: #565656;
+    color: #ffffff;
+    cursor: pointer;
+}
+/* tabel */
+table {
+    border: #565656 solid 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 1rem;
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+    align-items: center;
+
+}
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+input[type="range"]{
+    min-width: 768px;
+    max-width: 1000px;
+}
+/* ===============range===================================== */
+.range {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+    nav ul li {
+        width: auto;
+    }
+    .content {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    input[type="text"], [type="button"]{
+        width: 100%;
+    }
+    .icon-list {
+        display: block;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
