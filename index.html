@@ -5,32 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cek notip</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
 </head>
 <body>
     <nav>
         <div class="logo"><img src="assets/ChatGPT_Image_23_Apr_2025__09.21.40__1_-removebg-preview 3.png" alt="logo"></div>
         <div class="icon-list">
-            <i id="menu-icon" class="ph ph-list"></i>
+            <i id="menuIcon" class="ph ph-list"></i>
         </div>
-        <ul class="navbar">
-            <li>home</li>
-            <li>profile</li>
-            <li>about</li>
+        <ul id="menuList" class="navbar">
+            <li><a href="https://youtu.be/dQw4w9WgXcQ?si=zwjaoqn8MI6Jf-pF">home</a></li>
+            <li><a href="https://youtu.be/dQw4w9WgXcQ?si=zwjaoqn8MI6Jf-pF">prediction</a></li>
+            <li><a href="https://youtu.be/dQw4w9WgXcQ?si=zwjaoqn8MI6Jf-pF">profile</a></li>
         </ul>
     </nav>
     <main>
-        <h1>PREDIKSI PENURUNAN TANAH</h1>
-        <div class="input">
-            <p>masukkan tahun prediksi</p>
-            <input type="text" id="tahun" placeholder="ex 2025" required>
-            <button id="kirim">cek</button>
-            <p id="disTahun" >prediksi tahun :</p>
-            <p id="disPrediksi">blablabla</p>
+        <div class="container">
+            <h1>PREDIKSI<br>PENURUNAN TANAH</h1>
+            <div class="input">
+                <p>masukkan tahun prediksi</p>
+                <input type="number" id="tahun" placeholder="ex 2025" required>
+                <button id="kirim">submit</button>
+                <p id="disPrediksi" ></p>
+            </div>
         </div>
-        <div class="content">
-            <p>cek </p>
+        <div class="grafik">
+            <div class="caption">
+                <center>GRAFIK PENURUNAN TANAH</center>
+                
+            </div>
             <div class="tabel">
-                <p>tamplan</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="visual">
+            <center>VISUALISASI PENURUNAN</center>
+            <div class="tabel">
+                <p></p>
+            </div>
+        </div>
+        <div class="alert">
+            <center>PERINGATAN</center>
+            <div class="tabel">
+                <p></p>
             </div>
         </div>
     </main>

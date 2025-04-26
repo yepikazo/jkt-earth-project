@@ -1,15 +1,14 @@
-const cek = document.getElementById("btn-kirim")
-const a = document.getElementById("a")
-const b = document.getElementById("b")
-const notip = document.getElementById("notip")
+const menuIcon = document.getElementById('menuIcon')
+const menuList = document.getElementById('menuList')
+const tahun = document.getElementById('tahun')
+const kirim = document.getElementById('kirim')
 
-// DOM prediksi
-const tahun = document.getElementById("tahun");
-const disTahun = document.getElementById("disTahun");
-const disPrediksi = document.getElementById("disPrediksi");
-const kirim = document.getElementById("kirim");
+menuIcon.addEventListener("click", function(){
+    // alert('jawa jawa jawa')
+    menuList.classList.toggle('navbar');
 
-// Array penurunan tanah
+})
+
 const dataPenurunan = [
     { tahun: 2016, penurunan: -12.55 },
     { tahun: 2017, penurunan: -3.69 },
@@ -42,55 +41,20 @@ kirim.addEventListener("click", function () {
 
     // Validasi input
     if (isNaN(tahunPrediksi)) {
-        disTahun.innerHTML = "Masukkan tahun yang valid!";
-        disPrediksi.innerHTML = "";
+        disPrediksi.innerHTML = "Masukkan tahun yang valid!";
         return;
     }
     if (tahunPrediksi <= 2024) {
-        disTahun.innerHTML = "Masukkan tahun lebih dari 2024!";
-        disPrediksi.innerHTML = "";
+        disPrediksi.innerHTML = "Masukkan tahun lebih dari 2024!";
         return;
     }
-    // if (tahunPrediksi >= 2034) {
-    //     disTahun.innerHTML = "tahun yang anda masukkan terlalu tinggi, ini dapan menyebabkan prediksi yang tidak akurat";
-    //     disPrediksi.innerHTML = "";
-    //     return;
-    // }
+    if (tahunPrediksi >= 2034) {
+        disPrediksi.innerHTML = "tahun yang anda masukkan terlalu tinggi, ini dapan menyebabkan prediksi yang tidak akurat";
+        return;
+    }
     let hasil = prediksiPenurunan(dataPenurunan, tahunPrediksi);
     hasil = Math.abs(hasil)
 
 
-    disTahun.innerHTML = `Prediksi pada tahun ${tahunPrediksi}`;
-    disPrediksi.innerHTML = `penurunan  adalah ${hasil}cm`;
+    disPrediksi.innerHTML = `prediksi penurunan  pada tahun ${tahunPrediksi} adalah ${hasil}cm`;
 });
-
-
-
-
-//method
-// getElementById() digunakan untuk mengambil elemen dengan id tertentu, menghasilkan elemen
-//getElementsByTagName() digunakan untuk mengambil elemen dengan ntag tertentu, menghasilkan HTMLcollection
-//getElementsByClassName() digunakan untuk mengambil elemen dengan class tertentu, menghasilkan HTMLcollection
-//querySelector() digunakan untuk mengambil elemen dengan selector tertentu, menghasilkan elemen pertama yang ditemukan
-//querySelectorAll() digunakan untuk mengambil elemen dengan selector tertentu dan mengembalikan array
-
-cek.addEventListener("click", function () {
-    const besarData = dataPenurunan.length
-    const total = dataPenurunan.reduce((accumulator, currentValue) => accumulator + currentValue.penurunan, 0);
-    let rataRata = total / besarData
-    rataRata = Math.abs(rataRata)
-    // alert(`variabel a = ${a.value + b.value} \n variabel b = ${b.value}`)
-    // notip.innerHTML = `variabel a = ${a.value} <br> variabel b = ${b.value} <br> jumlah = ${parseInt(a.value) + parseInt(b.value)}`
-    notip.innerHTML = `rata rata tahun = ${rataRata}`
-});
-
-
-
-
-
-//style manipulation
-notip.style.fontFamily = "Arial, sans-serif"
-notip.style.fontStyle = "italic"
-notip.style.color = "red"
-
-blee.style.color = "blue"
