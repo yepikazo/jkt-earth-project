@@ -109,7 +109,12 @@ img {
     transition-duration: 0.5s;
 }
 
-
+.cardm1, .cardm2, .cardm3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
 
 .nama {
     margin-top: 2rem;
@@ -152,9 +157,8 @@ footer {
         flex-direction: column;
     }
 
-    .cardm1, .cardm2 {
+    .cardm1, .cardm2, .cardm3 {
         display: flex;
-        /* justify-content: center; */
     }
     
 
