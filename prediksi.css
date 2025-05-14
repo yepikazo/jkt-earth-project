@@ -1,0 +1,309 @@
+*, html {
+    margin : 0;
+    padding : 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+body{
+    background-image: linear-gradient(rgba(113, 113, 113, 0.5), rgba(138, 138, 138, 0.5)), url("assets/polygon.jpg");
+}
+
+
+
+a {
+    text-decoration: none;
+    color :white;
+}
+
+nav{
+    background-color: #000957;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    /* position: fixed; */
+    width: 99%;
+    
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+nav ul li{
+    list-style-type: none;
+    width: 100%;
+    font-style: bold;
+    
+    color: #ffffff;
+    padding : 0.5rem;
+    transition: all;
+    transition-duration: 0.5s;
+
+}
+
+nav ul li:hover{
+    background-color: #344CB7;
+    border-radius: 5px;
+    color :#d5d5d5
+}
+img {
+    width: 50px;
+    height: 50px;
+    padding : 0.5rem;
+}
+
+.icon-list {
+    display: none;
+    color: #ffffff;
+    font-size: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    cursor: pointer;
+}
+
+/* main content */
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container h1, .input {
+    padding: 1rem;
+}
+
+.caption {
+    padding-bottom: 1.rem;
+}
+
+.input p {
+    font-size: 15px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.opsi p {
+    font-size: 15px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.input input{
+    border-radius: 3px;
+    width :310px;
+    height :30px;
+}
+
+.input i {
+    font-size: 25px;
+    color: #ff0000;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.input button {
+    border :none;
+    border-radius: 5px;
+    background-color: #344CB7;
+    color:white;
+    width : 50px;
+    height :30px;
+    
+}
+
+.submit {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap :3px;
+}
+
+
+
+center {
+    padding :0.5rem;
+    color :white
+}
+
+.tabel{
+    width : 100%;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.container{
+    align-content: center;
+    padding: 2rem;
+    width : 28%;
+    margin: 1rem;
+    color :white;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.disclaimer{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    letter-spacing: 1px;
+    background-color: #ff0000;
+    border-radius: 8px;
+    border-style: rounded;
+    font-size: 15px;
+}
+
+.grafik{
+    padding: 1rem;
+    margin: 1rem;
+    width : 60%;
+    height: 450px;
+    background-color: #577BC1;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.visual{
+    padding: 1rem;
+    margin: 1rem;
+    width : 100%;
+    background-color: #577BC1;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.alert{
+    padding: 1rem;
+    margin: 1rem;
+    width : 320px;
+    background-color: #ff0000;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: appear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+input[type="button"]{
+    width: 200px;
+}
+
+input[type="number"]{
+    width: 60px;
+    border-style: none;
+}
+
+input[type="button"]:hover{
+    background-color: #565656;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button {
+    border-style: none;
+    border-color: #ffffff;
+    border-radius: 5px;
+    color :#565656;
+    width: 100px;
+    height: 30px;
+}
+
+button:hover{
+    background-color: #344CB7;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+canvas {
+    border:1px solid #ccc;
+    border-radius: 5px;
+    width : 100%;
+    height: 400px;
+    background-color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: auto;
+    }
+
+    nav ul.navbar {
+        display: none;
+    }
+
+    .container {
+        width: 100%; /* Ubah dari 768px ke 100% agar lebih fleksibel */
+        padding: 0 1rem; /* Tambahkan padding untuk memberikan ruang */
+    }
+
+    .grafik {
+        width :100%;
+        margin:1rem;
+    }
+
+    .content {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .alert {
+        width: 100%; /* Ubah dari 768px ke 100% */
+    }
+
+    .icon-list {
+        display: block;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}

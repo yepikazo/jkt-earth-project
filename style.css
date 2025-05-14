@@ -1,7 +1,6 @@
 *, html {
     margin : 0;
     padding : 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
 
@@ -23,6 +22,7 @@ nav{
     padding: 1rem;
     /* position: fixed; */
     width: 99%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
 }
 
@@ -70,158 +70,74 @@ img {
 main {
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
-
-
-.caption {
-    padding-bottom: 1.rem;
+.container {
+    /* background-color: #525355; */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    margin: 2rem;
 }
 
-.input p {
-    font-size: 15px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.opsi p {
-    font-size: 15px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.input input{
-    border-radius: 3px;
-    width :310px;
-    height :25px;
-}
-
-.input button {
-    border :none;
-    border-radius: 5px;
-    background-color: #344CB7;
-    color:white;
-    width : 50px;
-    height :30px;
-    
-}
-
-
-
-
-
-center {
-    padding :0.5rem;
-    color :white
-}
-
-.tabel{
-    width : 100%;
-    height: 250px;
-    background-color: #ffffff;
-    border-radius: 10px;
+.container .logo {
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 30px;
 }
 
-.container{
-    padding: 2rem;
-    width : 28%;
-    margin: 1rem;
-    color :white;
-    letter-spacing: 3px;
-    border-radius: 10px;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
-}
-
-.grafik{
-    padding: 1rem;
-    margin: 1rem;
-    width : 60%;
-    background-color: #577BC1;
-    border-radius: 10px;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
-}
-
-.visual{
-    padding: 1rem;
-    margin: 1rem;
-    width : 100%;
-    background-color: #577BC1;
-    border-radius: 10px;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
-}
-
-.alert{
-    padding: 1rem;
-    margin: 1rem;
-    width : 320px;
-    background-color: #ff0000;
-    border-radius: 10px;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
-}
-
-input[type="button"]{
+.container .logo img {
     width: 200px;
+    height: 200px;
+    margin: 1rem;
 }
 
-input[type="number"]{
-    width: 60px;
-    border-style: none;
+.content {
+    width: 100%;
+    height: 100%;
+    margin: 2rem;
+    padding: 2rem;
 }
 
-input[type="button"]:hover{
-    background-color: #565656;
-    color: #ffffff;
-    cursor: pointer;
+.mulai {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
-button {
-    border-style: none;
-    border-color: #ffffff;
+.mulai a {
+    background-color: #000957;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
     border-radius: 5px;
-    color :#565656;
-    width: 100px;
-    height: 30px;
+    cursor: pointer;
+    animation-duration: 0.5s;
 }
 
-button:hover{
+.mulai a:hover {
     background-color: #344CB7;
-    color: #ffffff;
-    cursor: pointer;
+    color: #d5d5d5;
+    scale: 1.1;
+    transition: all;
+    transition-duration: 0.3s;
 }
 
-
-canvas {
-    border:1px solid #ccc;
-    border-radius: 5px;
-    width : 100%;
-    height: 250px;
-    background-color: #fff;
-}
-
-
+.vl {
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 420px;
+  }
 @media screen and (max-width: 768px) {
     nav {
         flex-wrap: wrap;
@@ -241,31 +157,12 @@ canvas {
     }
 
     .container {
-        width: 100%; /* Ubah dari 768px ke 100% agar lebih fleksibel */
-        padding: 0 1rem; /* Tambahkan padding untuk memberikan ruang */
-    }
-
-    .grafik {
-        width :100%;
-        margin:1rem;
-    }
-
-    .content {
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .alert {
-        width: 100%; /* Ubah dari 768px ke 100% */
-    }
-
-    .icon-list {
-        display: block;
-    }
-
-    canvas {
-        width: 100%;
+        flex-direction: column;
         height: auto;
+    }
+
+    .vl {
+        display: none;
     }
 }
 

@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url(assets/polygon.jpg);
+    background-image: linear-gradient(rgba(113, 113, 113, 0.5), rgba(138, 138, 138, 0.5)), url("assets/polygon.jpg");
 }
 
 a {
@@ -20,7 +20,7 @@ nav{
     justify-content: space-between;
     padding: 1rem;
     /* position: fixed; */
-    width: 98%;
+    width: 100%;
     
 }
 
@@ -136,7 +136,7 @@ img {
 footer {
     background-color: #505050;
     width :100%;
-    height: 127px;
+    height: 105px;
     display: flex;
     justify-content: center;
     align-items: center;

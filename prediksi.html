@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prediksi</title>
+    <link rel="stylesheet" href="prediksi.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="assets/ChatGPT_Image_23_Apr_2025__09.21.40__1_-removebg-preview 3.png" alt="logo"></div>
+        <div class="icon-list">
+            <i id="menuIcon" class="ph ph-list"></i>
+        </div>
+        <ul id="menuList" class="navbar">
+            <li><a href="index.html">home</a></li>
+            <li><a href="prediksi.html">prediction</a></li>
+            <li><a href="profile.html">profile</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>PREDIKSI<br>RATA RATA<br>PENURUNAN TANAH<br>PROVINSI JAKARTA</h1>
+            <hr>
+            <div class="user">
+                <div class="input">
+                    <p>masukkan tahun prediksi</p>
+                    <div class="submit">
+                        <input type="number" id="tahun" placeholder=" ex 2025" required>
+                        <button id="kirim">submit</button>
+                        <i class="ph ph-warning" id="warning"></i>
+                    </div>
+                    <div class="output">
+                        <!-- <p>penurunan pada tahun :</p> -->
+                        <!-- <input type="text" readonly> -->
+                    </div>
+                    <p id="disPrediksi" ></p>
+                </div>
+            </div>
+        </div>
+        <div class="grafik">
+            <div class="caption">
+                <center>GRAFIK PENURUNAN TANAH</center>
+            </div>
+            <canvas id="myChart"></canvas>
+                <p></p>
+            </div>
+        </div>
+        <!-- <div class="visual">
+            <center>VISUALISASI PENURUNAN</center>
+            <canvas id="airCanvas"></canvas>
+        </div>
+        <div class="alert">
+            <center>PERINGATAN</center>
+            <div class="tabel">
+                <p></p>
+            </div>
+        </div> -->
+    </main>
+    <script src="prediksi.js"></script>
+</body>
+</html>
