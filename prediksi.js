@@ -16,7 +16,7 @@ menuIcon.addEventListener("click", function () {
 });
 
 warning.addEventListener("click", function () {
-    alert ("Peringatan: prediksi ini menggunakan data yang tidak akurat dan hanya untuk tujuan ilustrasi dan pembelajaran. tidak untuk digunakan dalam keputusan penting.");
+    alert("Peringatan: prediksi ini menggunakan data yang tidak akurat dan hanya untuk tujuan ilustrasi dan pembelajaran. tidak untuk digunakan dalam keputusan penting.");
 });
 
 // Fungsi menampilkan grafik penurunan
@@ -101,10 +101,10 @@ kirim.addEventListener("click", function () {
     disPrediksi.innerHTML = `Tahun ${tahunPrediksi}: penurunan ${total.toFixed(2)} cm, elevasi ${elevasi.toFixed(4)} mdpl`;
 });
 
-// Grafik default saat halaman dimuat (2015–2024), tanpa hasil prediksi
+// Grafik default saat halaman dimuat (2024–2025), tanpa hasil prediksi
 window.onload = function () {
-    const tahunAwal = 2015;
-    const tahunAkhir = 2024;
+    const tahunAwal = 2024;
+    const tahunAkhir = 2025;
     tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
     disPrediksi.innerHTML = ""; // tidak tampilkan info untuk tahun 2024
 };
