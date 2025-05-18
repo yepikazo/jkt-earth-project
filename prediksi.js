@@ -83,7 +83,7 @@ function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
 // Event saat tombol submit diklik
 kirim.addEventListener("click", function () {
     const tahunPrediksi = parseInt(tahun.value);
-    const tahunAwal = 2024;
+    const tahunAwal = 2025;
 
     if (isNaN(tahunPrediksi)) {
         disPrediksi.innerHTML = "Masukkan tahun yang valid!";
@@ -93,12 +93,22 @@ kirim.addEventListener("click", function () {
         disPrediksi.innerHTML = "";
         return;
     }
-    if (tahunPrediksi >= 2035) {
-        disPrediksi.innerHTML = "Tahun terlalu tinggi, input tahun yang lebih rendah!";
-        return;
+    if (tahunPrediksi > 2035) {
+        if (confirm("Tahun terlalu tinggi, ini menyebabkan prediksi menjadi kurang akurat, apakah anda ingin melanjutkanya?") == true){
+
+        } else{
+            return;
+        }
     }
 
-    tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
+    if (tahunPrediksi === 2025) {
+        const tahunAwal = 2024;
+        const tahunAkhir = 2025;
+        tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
+        disPrediksi.innerHTML = ""; 
+    } else{
+        tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
+    }
 
     let total = 0;
     for (let t = tahunAwal; t <= tahunPrediksi; t++) {
@@ -127,8 +137,10 @@ kirim.addEventListener("click", function () {
         visual.src = "assets/visual_99.png";
     } else if (total === 110) {
         visual.src = "assets/visual_110.png";
+    } else if (total >= 110) {
+        visual.src = "assets/null.png";
     } else {
-        visual.src = "img/visual_default.png";
+        visual.src = "assets/visual_default.jpg";
     }
 });
 
