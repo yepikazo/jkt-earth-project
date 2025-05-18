@@ -1,23 +1,30 @@
 const menuIcon = document.getElementById('menuIcon');
 const menuList = document.getElementById('menuList');
-const warning = document.getElementById('warning');
 
 const tahun = document.getElementById('tahun');
 const kirim = document.getElementById('kirim');
 const disPrediksi = document.getElementById('disPrediksi');
+const visual = document.getElementById('visual');
+
+const openwarning = document.getElementById('openwarning');
+const closewarning = document.getElementById('closewarning');
+const warning = document.getElementById('warning');
 
 let chart;
-let metodeAktif = 'deret'; // default metode
-const rataRata = 3.9; // penurunan per tahun dalam cm
-const elevasiAwal = 100; // asumsi elevasi awal 100 mdpl
+let metodeAktif = 'deret';
+const rataRata = 11; 
 
 menuIcon.addEventListener("click", function () {
     menuList.classList.toggle('navbar');
 });
 
-warning.addEventListener("click", function () {
-    alert("Peringatan: prediksi ini menggunakan data yang tidak akurat dan hanya untuk tujuan ilustrasi dan pembelajaran. tidak untuk digunakan dalam keputusan penting.");
-});
+openwarning.addEventListener("click", function () {
+    warning.classList.add('open');
+})
+
+closewarning.addEventListener("click", function () {
+    warning.classList.remove('open');
+})
 
 // Fungsi menampilkan grafik penurunan
 function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
@@ -83,11 +90,11 @@ kirim.addEventListener("click", function () {
         return;
     }
     if (tahunPrediksi <= tahunAwal) {
-        disPrediksi.innerHTML = ""; // tidak tampilkan hasil untuk tahun 2024 atau kurang
+        disPrediksi.innerHTML = "";
         return;
     }
-    if (tahunPrediksi >= 2080) {
-        disPrediksi.innerHTML = "Tahun terlalu tinggi, prediksi mungkin tidak akurat.";
+    if (tahunPrediksi >= 2035) {
+        disPrediksi.innerHTML = "Tahun terlalu tinggi, input tahun yang lebih rendah!";
         return;
     }
 
@@ -97,14 +104,37 @@ kirim.addEventListener("click", function () {
     for (let t = tahunAwal; t <= tahunPrediksi; t++) {
         total += rataRata;
     }
-    const elevasi = elevasiAwal - total / 100; // konversi ke meter
-    disPrediksi.innerHTML = `Tahun ${tahunPrediksi}: penurunan ${total.toFixed(2)} cm, elevasi ${elevasi.toFixed(4)} mdpl`;
+
+    disPrediksi.innerHTML = `Tahun ${tahunPrediksi}: penurunan ${total.toFixed(2)} cm`;
+
+    if (total === 11) {
+        visual.src = "assets/visual_11.png";
+    } else if (total === 22) {
+        visual.src = "assets/visual_22.png";
+    } else if (total === 33) {
+        visual.src = "assets/visual_33.png";
+    } else if (total === 44) {
+        visual.src = "assets/visual_44.png";
+    } else if (total === 55) {
+        visual.src = "assets/visual_55.png";
+    } else if (total === 66) {
+        visual.src = "assets/visual_66.png";
+    } else if (total === 77) {
+        visual.src = "assets/visual_77.png";
+    } else if (total === 88) {
+        visual.src = "assets/visual_88.png";
+    } else if (total === 99) {
+        visual.src = "assets/visual_99.png";
+    } else if (total === 110) {
+        visual.src = "assets/visual_110.png";
+    } else {
+        visual.src = "img/visual_default.png";
+    }
 });
 
-// Grafik default saat halaman dimuat (2024–2025), tanpa hasil prediksi
 window.onload = function () {
     const tahunAwal = 2024;
     const tahunAkhir = 2025;
     tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
-    disPrediksi.innerHTML = ""; // tidak tampilkan info untuk tahun 2024
+    disPrediksi.innerHTML = ""; 
 };

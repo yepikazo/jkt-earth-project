@@ -21,47 +21,60 @@
             <i id="menuIcon" class="ph ph-list"></i>
         </div>
         <ul id="menuList" class="navbar">
-            <li><a href="index.html">home</a></li>
+            <li><a href="home.html">home</a></li>
             <li class="now"><a href="prediksi.html">prediction</a></li>
             <li><a href="profile.html">profile</a></li>
         </ul>
     </nav>
     <main>
-        <div class="container">
-            <h1>PREDIKSI<br>RATA RATA<br>PENURUNAN TANAH<br>DAERAH JAKARTA UTARA</h1>
-            <hr>
-            <div class="user">
-                <div class="input">
-                    <p>masukkan tahun prediksi</p>
-                    <div class="submit">
-                        <input type="number" id="tahun" placeholder=" ex 2025" required>
-                        <button id="kirim">submit</button>
-                        <i class="ph ph-warning" id="warning"></i>
+        <div class="cont1">
+            <div class="container">
+                <div class="isicont">
+                    <p>PREDIKSI<br>PENURUNAN TANAH<br>DAERAH JAKARTA UTARA</p>
+                    <hr>
+                    <div class="user">
+                        <div class="input">
+                            <p>masukkan tahun prediksi</p>
+                            <div class="submit">
+                                <input type="number" id="tahun" placeholder=" ex 2025" required>
+                                <button id="kirim">submit</button>
+                                <i id="openwarning"class="ph ph-warning"></i>
+                                <div class="warning" id="warning">
+                                    <div class="innerwarn">
+                                        <center id="title">PERINGATAN</center>
+                                        <p>prediksi ini menggunakan data dari 1 sumber dan hanya untuk tujuan ilustrasi dan pembelajaran. Tidak untuk digunakan dalam keputusan penting.</p>
+                                        <button id="closewarning">tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="output">
+                                <!-- <p>penurunan pada tahun :</p> -->
+                                <!-- <input type="text" readonly> -->
+                            </div>
+                            <p id="disPrediksi" ></p>
+                        </div>
                     </div>
-                    <div class="output">
-                        <!-- <p>penurunan pada tahun :</p> -->
-                        <!-- <input type="text" readonly> -->
-                    </div>
-                    <p id="disPrediksi" ></p>
+                </div>
+            </div>
+            <div class="grafik">
+                <div class="caption">
+                    <center>GRAFIK PENURUNAN TANAH</center>
+                </div>
+                <canvas id="myChart"></canvas>
+                    <p></p>
                 </div>
             </div>
         </div>
-        <div class="grafik">
-            <div class="caption">
-                <center>GRAFIK PENURUNAN TANAH</center>
-            </div>
-            <canvas id="myChart"></canvas>
-                <p></p>
-            </div>
-        </div>
         <div class="visual">
-            <center>VISUALISASI PENURUNAN (belum beres wkwk)</center>
+            <center>VISUALISASI PENURUNAN</center>
             <div class="gambarvisual">
-                <img src="assets/visual.png" alt="">
+                <img id="visual" src="assets/visual.png" alt="">
             </div>
-            
         </div>
     </main>
+    <footer>
+        <p class="kopirek">&#169; kelompok 5 kelas CE 2025</p>
+    </footer>
     <script src="prediksi.js"></script>
 </body>
 </html>

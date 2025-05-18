@@ -1,7 +1,7 @@
 *, html {
     margin : 0;
     padding : 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 
 }
 
@@ -13,7 +13,7 @@ nav{
     background-color: #000957;
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
+    position: sticky; top: 0;
     padding-top: 0.5rem;
     width: 100%;
     height: 52px;
@@ -45,7 +45,7 @@ nav ul li{
     color :white;
 }
 
-nav ul li a {
+a {
     text-decoration: none;
     color :white;
 }
@@ -102,14 +102,7 @@ nav div img {
 main {
     display: flex;
     flex-wrap: wrap;
-}
-
-/* .container h1 {
-    color :#FFEB00;
-} */
-
-.container h1, .input {
-    padding: 1rem;
+    padding :1rem;
 }
 
 .caption {
@@ -176,17 +169,6 @@ center {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.container{
-    align-content: center;
-    padding: 2rem;
-    width : 28%;
-    margin: 1rem;
-    color :white;
-    letter-spacing: 3px;
-    border-radius: 10px;
-    border-style: rounded;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
 .disclaimer{
     margin: 0.5rem;
@@ -198,11 +180,87 @@ center {
     font-size: 15px;
 }
 
+.cont1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    gap :1rem;
+}
+
+.container{
+    align-content: center;
+    /* padding: 0rem; */
+    width : 40%;
+    height: 400px;
+    color :white;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    border-style: rounded;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+}
+
+.warning{
+    color: black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+
+}
+
+.warning.open{
+    opacity: 1;
+    z-index: 1000;
+}
+
+.innerwarn{
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 380px;
+    letter-spacing: normal;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.innerwarn center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#ff0000;
+    height: 50px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.innerwarn button{
+    margin: 1rem;
+    background-color: #565656
+}
+
+.isicont{
+    margin :2rem;
+}
+
+.isicont p{
+    font-size: 20px;
+}
+
 .grafik{
     padding: 1rem;
-    margin: 1rem;
-    width : 60%;
-    height: 450px;
+    width : 55%;
+    height: auto ;
     background-color: #577BC1;
     border-radius: 10px;
     border-style: rounded;
@@ -217,9 +275,6 @@ center {
     border-radius: 10px;
     border-style: rounded;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: appear;
-    animation-timeline: view();
-    animation-range: entry 0;
 }
 
 .gambarvisual img{
@@ -232,7 +287,7 @@ input[type="button"]{
 }
 
 input[type="number"]{
-    width: 60px;
+    width: 70px;
     border-style: none;
 }
 
@@ -275,6 +330,17 @@ footer {
     align-items: center;
 }
 
+footer {
+    background-color: #505050;
+    width :100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    ;
+}
+
 @media screen and (max-width: 768px) {
     nav {
         flex-wrap: wrap;
@@ -282,43 +348,64 @@ footer {
         padding-bottom :1rem ;
     }
 
+    .now {
+        background-color: transparent;
+        color :#d5d5d5
+    }
+
     nav ul {
         flex-direction: column;
         width: 100%;
+        justify-content: left;
+        align-items: left;
+        background-color:#000957;
+        margin-top: 0.8rem;
+        animation: slide 0.5s ease-in-out;
     }
 
     nav ul li {
         width: auto;
     }
 
+    nav ul li:hover{
+        background-color: transparent;
+        color :#d5d5d5;
+        scale :1.3;
+    }
+
     nav ul.navbar {
         display: none;
-        justify-content: right;
+        animation: appear 0.5s ease-in-out;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin: 2rem;
     }
 
     .icon-list {
         display: block;
     }
 
+    .cont1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    
     .container {
-        width: 100%; /* Ubah dari 768px ke 100% agar lebih fleksibel */
-        padding: 0 1rem; /* Tambahkan padding untuk memberikan ruang */
+        width: 100%; 
     }
 
     .grafik {
         width :90%;
-        height: auto;
-        /* margin:1rem; */
+    
     }
 
-    .content {
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .alert {
-        width: 100%; /* Ubah dari 768px ke 100% */
-    }
+    
 
     canvas {
         width: 100%;
