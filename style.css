@@ -205,6 +205,8 @@ main {
         align-items: left;
         background-color:#000957;
         margin-top: 0.8rem;
+        padding-bottom: 1rem;
+
         animation: slide 0.5s ease-in-out;
     }
 

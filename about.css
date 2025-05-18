@@ -270,6 +270,7 @@ footer {
         width: 100%;
         justify-content: left;
         align-items: left;
+        padding-bottom: 1rem;
         background-color:#000957;
         margin-top: 4rem;
         animation: slide 0.5s ease-in-out;
