@@ -151,6 +151,10 @@ main {
     padding: 2rem;
 }
 
+.content p {
+    padding: 1rem;
+}
+
 .mulai {
     margin: 2rem;
     display: flex;
@@ -220,7 +224,6 @@ main {
     .container {
         flex-direction: column;
         height: auto;
-        padding: 2rem;
     }
 
     .icon-list {
