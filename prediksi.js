@@ -20,11 +20,11 @@ menuIcon.addEventListener("click", function () {
 
 openwarning.addEventListener("click", function () {
     warning.classList.add('open');
-})
+});
 
 closewarning.addEventListener("click", function () {
     warning.classList.remove('open');
-})
+});
 
 // Fungsi menampilkan grafik penurunan
 function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
@@ -32,9 +32,15 @@ function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
     const data = [];
 
     let total = 0;
+
+    // Tambahkan tahun 2025 sebagai titik awal (0 cm)
+    labels.push(2025);
+    data.push(0);
+
+    // Mulai penurunan dari tahun setelah 2025
     for (let t = tahunAwal; t <= tahunAkhir; t++) {
-        labels.push(t);
         total += rataRata;
+        labels.push(t);
         data.push(-total); // negatif menunjukkan penurunan
     }
 
@@ -83,32 +89,23 @@ function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
 // Event saat tombol submit diklik
 kirim.addEventListener("click", function () {
     const tahunPrediksi = parseInt(tahun.value);
-    const tahunAwal = 2025;
+    const tahunAwal = 2026;
 
     if (isNaN(tahunPrediksi)) {
         disPrediksi.innerHTML = "Masukkan tahun yang valid!";
         return;
     }
-    if (tahunPrediksi <= tahunAwal) {
+    if (tahunPrediksi < tahunAwal) {
         disPrediksi.innerHTML = "";
         return;
     }
     if (tahunPrediksi > 2035) {
-        if (confirm("Tahun terlalu tinggi, ini menyebabkan prediksi menjadi kurang akurat, apakah anda ingin melanjutkanya?") == true){
-
-        } else{
+        if (!confirm("Tahun terlalu tinggi, ini menyebabkan prediksi menjadi kurang akurat, apakah anda ingin melanjutkanya?")) {
             return;
         }
     }
 
-    if (tahunPrediksi === 2025) {
-        const tahunAwal = 2024;
-        const tahunAkhir = 2025;
-        tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
-        disPrediksi.innerHTML = ""; 
-    } else{
-        tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
-    }
+    tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
 
     let total = 0;
     for (let t = tahunAwal; t <= tahunPrediksi; t++) {
@@ -145,8 +142,8 @@ kirim.addEventListener("click", function () {
 });
 
 window.onload = function () {
-    const tahunAwal = 2024;
-    const tahunAkhir = 2025;
+    const tahunAwal = 2026;
+    const tahunAkhir = 2026;
     tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
     disPrediksi.innerHTML = ""; 
 };
