@@ -306,6 +306,10 @@ footer {
         align-items: center;
         justify-content: center;
     }
+
+    .cardf, .cardb{
+        width: 150px;
+    }
 }
 
 
