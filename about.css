@@ -1,19 +1,21 @@
 *, html {
     margin : 0;
     padding : 0;
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-
 }
 
 body{
     background-image: linear-gradient(rgba(113, 113, 113, 0.5), rgba(138, 138, 138, 0.5)), url("assets/polygon.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 nav{
     background-color: #000957;
     display: flex;
     justify-content: space-between;
-    position: sticky; top: 0;
+    /* position: sticky; top: 0; */
     padding-top: 0.5rem;
     width: 100%;
     height: 52px;
@@ -98,159 +100,144 @@ nav div img {
 
 /* main content */
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    font-family :'Times New Roman', Times, serif;
-    padding: 1rem;
-}
-
 .header{
-    font-size: 3rem;
     background-color: #505050;
-    color: #ffffff;
-    width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    color: #fff;
+    font-size: 2rem;
+    flex-direction: column;
+    padding: 2rem;
 }
 
-.caption{
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 5px;
-}
-
-.content{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 8px;
-    margin :1rem;
-    width: 100%;
-    color: #1a1a1a;
-
-}
-
-.cont1 {
-    display: flex;
-    justify-content: space-around;
-    gap : 1rem;
-    margin-top: 1rem;
-    background-color: #949292;
-    border-radius:8px ;
-}
-
-.cont2 {
-    display: flex;;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap : 1rem;
-    margin-top: 1rem;
-    border-radius:8px ;
-}
-
-.cont3 {
-    display: flex;
-    justify-content: space-around;
-    gap : 1rem;
-    margin-top: 1rem;
+.explain{
+    margin:1rem;
+    padding: 1rem;
     background-color: #fff;
-    border-radius:8px ;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.go{
-    background-color: #000957;
-    font-size:30px;
-    width: 220px;
-    height : 70px;
-    border-radius: 10px;
-    margin: 1rem;
-    cursor: pointer;
+.content {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    flex-wrap: wrap;
 }
 
-.go a{
-    text-decoration: none;
-    color: #ffffff;
+.card {
+    transform-style: preserve-3d;
+    transform: all 0.5s ease;
 }
 
-.go a:hover{
-    color: #909090
-}
-
-.go:hover {
-    background-color: #344CB7;
-    scale: 1.1;
+.cardf:hover{
+    scale: 1.05;
     transition: all;
     transition-duration: 0.5s;
 }
 
-.gambar {
-    padding: 1rem;
-    font-style: italic;
+.cardb:hover{
+    scale: 1.05;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.cardf {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 200px;
+    height: 300px;
+    border: solid black 3px;
+    margin: 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-
-.gambar img{
-    width: 350px;
-    height: 175px;
-    border-radius: 8px;
-}
-
-
-.title{
-    color: #3b3b3b;
-    font-weight: bolder;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.ex1 {
-    border-radius: 8px;
-    padding: 1rem;
-    /* width: 350px; */
-    font-size: 20px;
-}
-
-
-.ex2 {
-    display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    background-color: #949292;
-    border-radius: 8px;
-    width: 350px;
-    height: auto;
+    justify-content: space-between;
+    transition: all;
+    transition-duration: 0.5s;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #fff;
+    font-size:30px;
+    width: 130px;
+    height : 50px;
+    border-radius: 10px;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000957;
     color: #fff;
+    transition: all;
+    transition-duration: 0.5s;
 }
 
-.ex3 {
+.cardb {
+    background-color: #fff;
     border-radius: 8px;
-    padding: 1rem;
+    width: 200px;
+    height: 300px;
+    border: solid black 3px;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 20px;
+    justify-content: space-between;
+    transition: all;
+    transition-duration: 0.5s;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 
-.ex2 img{
-    width: 350px;
-    height: 175px;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+
+.nama {
+    font-size: 1.2rem;
+    text-align: center;
 }
-.ex2 ul{
-    padding-left: 2rem;
-    padding-bottom: 1rem;
+
+.role {
+    color :#344CB7;
+}
+
+.image img {
+    width: 100px;
+    height: auto;
+    margin : 1rem;
+}
+
+.ingpob {
+    margin: 1rem;
+}
+
+.ig{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.ig a {
+    color: #344CB7;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 1rem;
+    color :#FFEB00
+}
+
+.team{
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 footer {
@@ -263,6 +250,8 @@ footer {
     margin-top: auto;
     ;
 }
+
+
 
 @media screen and (max-width: 768px) {
     nav {
@@ -282,8 +271,9 @@ footer {
         justify-content: left;
         align-items: left;
         background-color:#000957;
-        margin-top: 0.8rem;
+        margin-top: 4rem;
         animation: slide 0.5s ease-in-out;
+        position:absolute;
     }
 
     nav ul li {
@@ -311,34 +301,10 @@ footer {
         display: block;
     }
 
-    /* main */
-
-    main{
-        font-size: 10px;
-        padding: 1rem;
-    }
-
-    .header{
-        font-size: 1rem;
-    }
-
-    .cont1{
+    .explain{
         flex-direction: column;
-    }
-
-    .cont2{
-        justify-content: space-around;
-    }
-
-    .gambar {
-        width : 200;
-        height : 150;
-        height : auto
-    }
-
-    .ex1 {
-        border-radius: 8px;
-        padding: 1rem;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -352,15 +318,5 @@ footer {
     to{
         opacity: 1;
         scale: 1;
-    }
-}
-
-@keyframes slide {
-    0% {
-        
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
     }
 }
