@@ -264,6 +264,8 @@ footer {
     align-items: center;
     margin-top: auto;
     ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 @media screen and (max-width: 768px) {
