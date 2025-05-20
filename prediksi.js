@@ -26,22 +26,21 @@ closewarning.addEventListener("click", function () {
     warning.classList.remove('open');
 });
 
-// Fungsi menampilkan grafik penurunan
+// Fungsi menampilkan grafik penurunan dengan metode deret eksplisit
 function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
     const labels = [];
     const data = [];
 
-    let total = 0;
-
-    // Tambahkan tahun 2025 sebagai titik awal (0 cm)
+    // Tahun awal tetap 2025 sebagai titik awal (0 cm)
     labels.push(2025);
     data.push(0);
 
-    // Mulai penurunan dari tahun setelah 2025
+    // Mulai dari tahun setelah 2025
     for (let t = tahunAwal; t <= tahunAkhir; t++) {
-        total += rataRata;
+        const tahunKe = t - tahunAwal + 1;
+        const penurunan = rataRata * tahunKe;
         labels.push(t);
-        data.push(-total); // negatif menunjukkan penurunan
+        data.push(-penurunan); // negatif menandakan penurunan
     }
 
     const dataset = {
@@ -86,7 +85,7 @@ function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
     }
 }
 
-// Event saat tombol submit diklik
+// Event saat tombol kirim diklik
 kirim.addEventListener("click", function () {
     const tahunPrediksi = parseInt(tahun.value);
     const tahunAwal = 2026;
@@ -100,44 +99,32 @@ kirim.addEventListener("click", function () {
         return;
     }
     if (tahunPrediksi > 2035) {
-        if (!confirm("Tahun terlalu tinggi, ini menyebabkan prediksi menjadi kurang akurat, apakah anda ingin melanjutkanya?")) {
+        if (!confirm("Tahun terlalu tinggi, ini menyebabkan prediksi menjadi kurang akurat, apakah anda ingin melanjutkannya?")) {
             return;
         }
     }
 
     tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
 
-    let total = 0;
-    for (let t = tahunAwal; t <= tahunPrediksi; t++) {
-        total += rataRata;
-    }
+    const jumlahTahun = tahunPrediksi - tahunAwal + 1;
+    const total = rataRata * jumlahTahun;
 
     disPrediksi.innerHTML = `Tahun ${tahunPrediksi}: penurunan ${total.toFixed(2)} cm`;
 
-    if (total === 11) {
-        visual.src = "assets/visual_11.png";
-    } else if (total === 22) {
-        visual.src = "assets/visual_22.png";
-    } else if (total === 33) {
-        visual.src = "assets/visual_33.png";
-    } else if (total === 44) {
-        visual.src = "assets/visual_44.png";
-    } else if (total === 55) {
-        visual.src = "assets/visual_55.png";
-    } else if (total === 66) {
-        visual.src = "assets/visual_66.png";
-    } else if (total === 77) {
-        visual.src = "assets/visual_77.png";
-    } else if (total === 88) {
-        visual.src = "assets/visual_88.png";
-    } else if (total === 99) {
-        visual.src = "assets/visual_99.png";
-    } else if (total === 110) {
-        visual.src = "assets/visual_110.png";
-    } else if (total >= 110) {
-        visual.src = "assets/null.png";
-    } else {
-        visual.src = "assets/visual_default.jpg";
+    switch (total) {
+        case 11: visual.src = "assets/visual_11.png"; break;
+        case 22: visual.src = "assets/visual_22.png"; break;
+        case 33: visual.src = "assets/visual_33.png"; break;
+        case 44: visual.src = "assets/visual_44.png"; break;
+        case 55: visual.src = "assets/visual_55.png"; break;
+        case 66: visual.src = "assets/visual_66.png"; break;
+        case 77: visual.src = "assets/visual_77.png"; break;
+        case 88: visual.src = "assets/visual_88.png"; break;
+        case 99: visual.src = "assets/visual_99.png"; break;
+        case 110: visual.src = "assets/visual_110.png"; break;
+        default:
+            visual.src = total >= 110 ? "assets/null.png" : "assets/visual_default.jpg";
+            break;
     }
 });
 
@@ -145,5 +132,5 @@ window.onload = function () {
     const tahunAwal = 2026;
     const tahunAkhir = 2026;
     tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
-    disPrediksi.innerHTML = ""; 
+    disPrediksi.innerHTML = "";
 };
