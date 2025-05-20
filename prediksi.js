@@ -12,7 +12,8 @@ const warning = document.getElementById('warning');
 
 let chart;
 let metodeAktif = 'deret';
-const rataRata = 11; 
+const rataRata = 11;
+const a = 0;
 
 menuIcon.addEventListener("click", function () {
     menuList.classList.toggle('navbar');
@@ -26,21 +27,16 @@ closewarning.addEventListener("click", function () {
     warning.classList.remove('open');
 });
 
-// Fungsi menampilkan grafik penurunan dengan metode deret eksplisit
+
 function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
     const labels = [];
     const data = [];
 
-    // Tahun awal tetap 2025 sebagai titik awal (0 cm)
-    labels.push(2025);
-    data.push(0);
-
-    // Mulai dari tahun setelah 2025
     for (let t = tahunAwal; t <= tahunAkhir; t++) {
         const tahunKe = t - tahunAwal + 1;
-        const penurunan = rataRata * tahunKe;
+        const penurunan = a + (tahunKe - 1) * rataRata;
         labels.push(t);
-        data.push(-penurunan); // negatif menandakan penurunan
+        data.push(-penurunan);
     }
 
     const dataset = {
@@ -88,14 +84,14 @@ function tampilkanGrafik(tahunAwal, tahunAkhir, metode) {
 // Event saat tombol kirim diklik
 kirim.addEventListener("click", function () {
     const tahunPrediksi = parseInt(tahun.value);
-    const tahunAwal = 2026;
+    const tahunAwal = 2025;
 
     if (isNaN(tahunPrediksi)) {
         disPrediksi.innerHTML = "Masukkan tahun yang valid!";
         return;
     }
-    if (tahunPrediksi < tahunAwal) {
-        disPrediksi.innerHTML = "";
+    if (tahunPrediksi <= tahunAwal) {
+        disPrediksi.innerHTML = "masukkan tahun diatas 2025!";
         return;
     }
     if (tahunPrediksi > 2035) {
@@ -107,11 +103,12 @@ kirim.addEventListener("click", function () {
     tampilkanGrafik(tahunAwal, tahunPrediksi, metodeAktif);
 
     const jumlahTahun = tahunPrediksi - tahunAwal + 1;
-    const total = rataRata * jumlahTahun;
+    const total = a + (jumlahTahun - 1) * rataRata;
 
     disPrediksi.innerHTML = `Tahun ${tahunPrediksi}: penurunan ${total.toFixed(2)} cm`;
 
     switch (total) {
+        case 0: visual.src = "assets/visual_default"; break;
         case 11: visual.src = "assets/visual_11.png"; break;
         case 22: visual.src = "assets/visual_22.png"; break;
         case 33: visual.src = "assets/visual_33.png"; break;
@@ -129,7 +126,7 @@ kirim.addEventListener("click", function () {
 });
 
 window.onload = function () {
-    const tahunAwal = 2026;
+    const tahunAwal = 2025;///////////////////////////////////bebe
     const tahunAkhir = 2026;
     tampilkanGrafik(tahunAwal, tahunAkhir, metodeAktif);
     disPrediksi.innerHTML = "";
