@@ -105,6 +105,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .container {
@@ -118,7 +120,7 @@ main {
     height: 500px;
     margin: 2rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
+    color: #292929;
 }
 
 .container .logo {
