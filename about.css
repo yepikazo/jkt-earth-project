@@ -240,6 +240,12 @@ button:hover {
 
 }
 
+p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 footer {
     background-color: #505050;
     width :100%;
